@@ -23,7 +23,7 @@ function ariaExpanded() {
     }
 }
 
-    // This script adds a class to the body after scrolling 100px
+// This script adds a class to the body after scrolling 100px
 // and we used these body.scroll styles to create some on scroll 
 // animations with the navbar
 
@@ -45,4 +45,31 @@ const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropd
     }
     item.addEventListener('click', onClick)
     }
-                    
+// This script sends an email using EmailJS
+document.getElementById('cs-form-1388').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    var name = document.getElementById('name-1388').value;
+    var email = document.getElementById('email-1388').value;
+    var phone = document.getElementById('phone-1388').value;
+    var message = document.getElementById('message-1388').value;
+
+    // Prepare the template parameters
+    var templateParams = {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+    };
+
+    // Send the email using EmailJS
+    emailjs.send("service_0tu5b5k","template_ytm6ad8", templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Message sent successfully!');
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Failed to send message. Please try again.');
+        });
+});
