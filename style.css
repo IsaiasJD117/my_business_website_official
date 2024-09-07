@@ -1742,6 +1742,7 @@
         /* 60px - 100px top and bottom */
         padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
         background-color: #1a1a1a;
+        position: relative;
         /* Navigation Links */
         /* Contact Links */
     }
@@ -1757,6 +1758,31 @@
         /* 68px - 100px */
         column-gap: clamp(4.25rem, calc(10%), 6.25rem);
     }
+    .cs-copyright-group {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cs-copyright {
+        margin: 0;
+        font-size: 14px;
+        color: #fff; /* Optional: change the text color */
+    }
+
+    .cs-copyright a {
+        color: var(--primary); /* Optional: change the link color */
+        text-decoration: none;
+    }
+
+    .cs-copyright a:hover {
+        color: #007bff;
+        text-decoration: underline;
+    }
+      
     #cs-footer-269 .cs-logo-group {
         /* takes up all the space, lets the other ul's wrap below it */
         width: 100%;
